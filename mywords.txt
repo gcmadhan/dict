@@ -1,0 +1,7 @@
+compressor
+centrifugal
+vibrating
+vibration
+rotating
+rotatory
+reciprocating
