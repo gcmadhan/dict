@@ -1,5 +1,4 @@
 import enchant
-import wx
 from enchant.checker import SpellChecker
 from enchant.checker.CmdLineChecker import CmdLineChecker
 
@@ -17,13 +16,19 @@ def spelcheker(dict1, dict2, sent):
         a=input("Select option or enter word to replace: ")
         if a.isnumeric():
             chek.replace(sug[int(a)])
+        elif (not a):
+            chek.replace(err.word)
+            txt.append(err.word)
         else:
             chek.replace(a)
             txt.append(a)
+    file=open("word.txt",'w')
+    file.writelines(txt)
+    file.close()
 
     return(chek.get_text())
-    
+
 dict1 = "en_US"
 dict2 = "myword.txt"
-sent = "Hi ths is to chek"
+sent = "Hi ths is to centrufel compreser mani"
 spelcheker(dict1, dict2, sent)
